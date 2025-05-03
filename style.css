@@ -1,0 +1,254 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background: #f4f6fb;
+    color: #22223b;
+}
+
+/* Modern Color Palette */
+:root {
+    --primary: #22223b;
+    --secondary: #4a4e69;
+    --accent: #9a8c98;
+    --background: #f4f6fb;
+    --button: #4a4e69;
+    --button-hover: #9a8c98;
+    --card-bg: #fff;
+    --card-shadow: rgba(34, 34, 59, 0.08);
+}
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--primary);
+    padding: 15px 30px;
+}
+
+nav .logo {
+    font-size: 1.5rem;
+    color: var(--accent);
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+nav ul li a:hover {
+    color: var(--accent);
+}
+
+/* Sections Styling */
+section {
+    padding: 60px 20px;
+    max-width: 1000px;
+    margin: auto;
+    background: var(--background);
+}
+
+/* Skills List */
+.skills-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.skills-list li {
+    background: var(--card-bg);
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px var(--card-shadow);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.skills-list li:hover {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 6px 16px var(--card-shadow);
+}
+
+/* Project Cards */
+.project-card {
+    background: var(--card-bg);
+    margin: 20px 0;
+    padding: 20px;
+    box-shadow: 0 2px 8px var(--card-shadow);
+    border-radius: 5px;
+    border-left: 5px solid var(--accent);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.project-card:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 8px 24px var(--card-shadow);
+    border-left: 5px solid var(--secondary);
+}
+
+/* Contact Form */
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+#contact-form input,
+#contact-form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+#contact-form button {
+    background: #333;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Contact Info Styling */
+.contact-info {
+    margin-top: 30px;
+}
+
+/* Scroll to Top Button */
+#topBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: none;
+    background: var(--secondary);
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+#topBtn:hover {
+    background: var(--accent);
+    color: var(--primary);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        background: #333;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        display: none;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    /* You can add a menu button for mobile later if needed */
+}
+
+/* Hero Section */
+#hero {
+    background: linear-gradient(120deg, var(--primary) 60%, var(--secondary) 100%);
+    color: #fff;
+    text-align: center;
+    padding: 80px 20px 60px 20px;
+    border-radius: 0 0 30px 30px;
+    box-shadow: 0 8px 32px var(--card-shadow);
+}
+
+#hero h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    letter-spacing: 1px;
+}
+
+#hero p {
+    font-size: 1.25rem;
+    margin-bottom: 24px;
+}
+
+.resume-btn {
+    display: inline-block;
+    background: var(--button);
+    color: #fff;
+    font-weight: 700;
+    padding: 12px 32px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    box-shadow: 0 2px 8px var(--card-shadow);
+    transition: background 0.2s, transform 0.2s;
+}
+
+.resume-btn:hover {
+    background: var(--button-hover);
+    color: var(--primary);
+    transform: scale(1.05);
+}
+
+/* Achievements Section */
+#achievements {
+    margin-top: 40px;
+}
+
+.achievements-list {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-top: 20px;
+}
+
+.achievements-list li {
+    margin-bottom: 10px;
+}
+
+/* Social Links */
+.social-links {
+    margin-top: 20px;
+}
+
+.social-links a {
+    text-decoration: none;
+    color: var(--secondary);
+    font-weight: bold;
+    margin-right: 10px;
+    transition: color 0.2s;
+}
+
+.social-links a:hover {
+    color: var(--accent);
+}
