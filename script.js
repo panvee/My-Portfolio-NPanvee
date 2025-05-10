@@ -1,9 +1,7 @@
-// Scroll to top button functionality
 function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// Show the scroll to top button when user scrolls down
 window.onscroll = function() {
     let topBtn = document.getElementById("topBtn");
     if (document.documentElement.scrollTop > 100) {
@@ -13,17 +11,14 @@ window.onscroll = function() {
     }
 };
 
-// Contact form validation
 document.getElementById("contact-form").addEventListener("submit", function(event) {
-    event.preventDefault(); // Prevent default form submission behavior
+    event.preventDefault();
 
-    // Get form values
     const name = document.getElementById("name").value.trim();
     const email = document.getElementById("email").value.trim();
     const message = document.getElementById("message").value.trim();
     let formValid = true;
 
-    // Simple validation to check if fields are filled
     if (name === "") {
         document.getElementById("name").style.borderColor = "red";
         formValid = false;
@@ -52,3 +47,36 @@ document.getElementById("contact-form").addEventListener("submit", function(even
         document.getElementById("contact-form").reset();
     }
 });
+
+
+
+function displayProjects() {
+    const projectContainer = document.getElementById("project-list");
+    projects.forEach(project => {
+        const projectItem = document.createElement("div");
+        projectItem.classList.add("project");
+
+        const title = document.createElement("h3");
+        title.textContent = project.title;
+
+        const desc = document.createElement("p");
+        desc.textContent = project.description;
+
+        const tech = document.createElement("p");
+        tech.textContent = "Tech Stack: " + project.techStack.join(", ");
+
+        const github = document.createElement("a");
+        github.href = project.githubLink;
+        github.textContent = "GitHub Repository";
+        github.target = "_blank";
+
+        projectItem.appendChild(title);
+        projectItem.appendChild(desc);
+        projectItem.appendChild(tech);
+        projectItem.appendChild(github);
+
+        projectContainer.appendChild(projectItem);
+    });
+}
+
+document.addEventListener("DOMContentLoaded", displayProjects);
